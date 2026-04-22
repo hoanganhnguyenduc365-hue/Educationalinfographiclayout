@@ -18,13 +18,13 @@ export function FooterSummary() {
     },
     {
       step: "03",
-      title: "Thực Tiễn Việt Nam",
+      title: "Dân Tộc & Quan Hệ Dân Tộc Ở Việt Nam",
       icon: <Users className="w-8 h-8" />,
-      desc: "Đánh giá 6 đặc điểm cốt lõi của 54 dân tộc anh em. Thấu hiểu hệ thống chính sách toàn diện của Đảng nhằm củng cố khối đại đoàn kết."
+      desc: "Đánh giá các đặc điểm cốt lõi của 54 dân tộc anh em. Thấu hiểu hệ thống chính sách toàn diện của Đảng nhằm củng cố khối đại đoàn kết."
     },
     {
       step: "04",
-      title: "Phân Xử Khoa Học",
+      title: "Tình Huống Giả Định",
       icon: <Scale className="w-8 h-8" />,
       desc: "Biện chứng giữa bình đẳng pháp lý và thực tế. Nhận diện thách thức về chênh lệch kinh tế và cảnh giác trước âm mưu 'Diễn biến hòa bình'."
     }
@@ -39,9 +39,9 @@ export function FooterSummary() {
       </div>
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -50,8 +50,8 @@ export function FooterSummary() {
           <div className="inline-flex items-center justify-center p-3 bg-white/10 rounded-full mb-6 backdrop-blur-md border border-white/20">
             <Flag className="w-8 h-8 text-[#D4AF37]" />
           </div>
-          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#D4AF37] to-white mb-6 uppercase tracking-wider">
-            Tổng Kết Nhóm 6
+          <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-white via-[#D4AF37] to-white mb-6 uppercase tracking-wider py-2">
+            Tổng Kết Của Nhóm 6
           </h2>
           <div className="h-1.5 w-32 bg-[#D4AF37] mx-auto rounded-full mb-6"></div>
           <p className="text-white/80 font-medium max-w-3xl mx-auto text-lg leading-relaxed">
@@ -82,7 +82,7 @@ export function FooterSummary() {
               <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wide group-hover:text-[#D4AF37] transition-colors">
                 {item.title}
               </h3>
-              
+
               <p className="text-white/70 leading-relaxed text-[15px] font-medium text-justify group-hover:text-white/90 transition-colors">
                 {item.desc}
               </p>
@@ -94,7 +94,7 @@ export function FooterSummary() {
         </div>
 
         {/* Grand Conclusion Box */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -104,18 +104,14 @@ export function FooterSummary() {
             <div className="bg-[#D4AF37]/20 p-6 rounded-full shrink-0 border-2 border-[#D4AF37]/50">
               <ShieldCheck className="w-16 h-16 text-[#D4AF37]" />
             </div>
-            
+
             <div className="text-center md:text-left">
               <h4 className="text-2xl md:text-3xl font-black text-white mb-4 uppercase tracking-wide">
-                Kết Luận Toàn Diện
+                Kết Luận Của Nhóm
               </h4>
               <p className="text-white/80 text-lg leading-relaxed mb-6 font-medium text-justify">
                 Vấn đề dân tộc không chỉ là lý luận hàn lâm mà là vấn đề sinh tử của quốc gia. Bằng việc vận dụng sáng tạo Cương lĩnh Mác - Lênin vào thực tiễn 54 dân tộc, Đảng ta đã và đang xây dựng một khối đại đoàn kết vững chắc. Xóa bỏ hoàn toàn khoảng cách chênh lệch lịch sử là chặng đường dài, đòi hỏi sự kiên định, nguồn lực lớn và tinh thần cảnh giác cao độ.
               </p>
-              <div className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#0B1E40] px-6 py-3 rounded-xl font-bold uppercase tracking-wider shadow-lg">
-                <CheckCircle2 className="w-6 h-6" />
-                Hoàn thành xuất sắc nhiệm vụ
-              </div>
             </div>
           </div>
         </motion.div>

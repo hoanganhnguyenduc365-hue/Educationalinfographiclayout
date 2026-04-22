@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { BookOpen, Menu, X, Landmark, Users, MapPin, Scale, Flag, GraduationCap } from "lucide-react";
+import { BookOpen, Menu, X, Landmark, Users, MapPin, Scale, Flag, GraduationCap, Bot } from "lucide-react";
 import { motion, AnimatePresence } from "motion/react";
+import { useNavigate } from "react-router";
 
 export function Header() {
+  const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
@@ -10,8 +12,8 @@ export function Header() {
   const menuItems = [
     { id: "section1", label: "Khái Niệm", icon: <BookOpen className="w-4 h-4" /> },
     { id: "section2", label: "Lý Luận", icon: <Landmark className="w-4 h-4" /> },
-    { id: "section3", label: "Thực Tiễn VN", icon: <Users className="w-4 h-4" /> },
-    { id: "section4", label: "Vận Dụng", icon: <Scale className="w-4 h-4" /> },
+    { id: "section3", label: "Dân Tộc & Quan Hệ", icon: <Users className="w-4 h-4" /> },
+    { id: "section4", label: "Tình Huống Giả Định", icon: <Scale className="w-4 h-4" /> },
     { id: "footer-summary", label: "Tổng Kết", icon: <Flag className="w-4 h-4" /> }
   ];
 
@@ -29,7 +31,7 @@ export function Header() {
           currentActive = menuItems[i].id;
         }
       }
-      
+
       setActiveSection(currentActive);
     };
 
@@ -48,16 +50,15 @@ export function Header() {
   return (
     <>
       {/* Fixed Interactive Navigation Bar */}
-      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-['Montserrat',sans-serif] ${
-        isScrolled 
-          ? "bg-[#002244]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3" 
-          : "bg-[#003366] border-b border-[#D4AF37]/30 py-4"
-      }`}>
+      <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 font-['Montserrat',sans-serif] ${isScrolled
+        ? "bg-[#002244]/95 backdrop-blur-xl border-b border-white/10 shadow-2xl py-3"
+        : "bg-[#003366] border-b border-[#D4AF37]/30 py-4"
+        }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
-            
+
             {/* Logo & Title */}
-            <div 
+            <div
               className="flex items-center space-x-3 cursor-pointer group"
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
             >
@@ -74,14 +75,13 @@ export function Header() {
             <div className="hidden lg:flex items-center p-1.5 bg-[#001122]/50 rounded-2xl border border-white/10 backdrop-blur-md shadow-inner">
               {menuItems.map((item) => {
                 const isActive = activeSection === item.id;
-                
+
                 return (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 z-10 group ${
-                      isActive ? "text-[#003366]" : "text-white/70 hover:text-white hover:bg-white/5"
-                    }`}
+                    className={`relative flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold transition-all duration-300 z-10 group ${isActive ? "text-[#003366]" : "text-white/70 hover:text-white hover:bg-white/5"
+                      }`}
                   >
                     {isActive && (
                       <motion.div
@@ -97,6 +97,14 @@ export function Header() {
                   </button>
                 );
               })}
+
+              <button
+                onClick={() => navigate('/ai-usage')}
+                className="relative flex items-center gap-2 px-5 py-2.5 ml-2 rounded-xl text-sm font-bold transition-all duration-300 z-10 group bg-[#D4AF37]/10 text-[#D4AF37] hover:bg-[#D4AF37]/20 border border-[#D4AF37]/30"
+              >
+                <Bot className="w-4 h-4 group-hover:rotate-12 transition-transform" />
+                AI Usage
+              </button>
             </div>
 
             {/* Mobile Menu Toggle Button */}
@@ -112,7 +120,7 @@ export function Header() {
         {/* Mobile Menu Dropdown (Animated) */}
         <AnimatePresence>
           {isMobileMenuOpen && (
-            <motion.div 
+            <motion.div
               initial={{ height: 0, opacity: 0 }}
               animate={{ height: "auto", opacity: 1 }}
               exit={{ height: 0, opacity: 0 }}
@@ -125,11 +133,10 @@ export function Header() {
                     <button
                       key={item.id}
                       onClick={() => scrollToSection(item.id)}
-                      className={`w-full text-left flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 text-sm font-bold ${
-                        isActive 
-                          ? "bg-gradient-to-r from-[#D4AF37]/20 to-transparent text-[#D4AF37] border-l-4 border-[#D4AF37]" 
-                          : "text-white/70 hover:bg-white/5 hover:text-white"
-                      }`}
+                      className={`w-full text-left flex items-center gap-4 px-5 py-4 rounded-xl transition-all duration-300 text-sm font-bold ${isActive
+                        ? "bg-gradient-to-r from-[#D4AF37]/20 to-transparent text-[#D4AF37] border-l-4 border-[#D4AF37]"
+                        : "text-white/70 hover:bg-white/5 hover:text-white"
+                        }`}
                     >
                       <div className={`p-2 rounded-lg ${isActive ? "bg-[#D4AF37]/20" : "bg-white/5"}`}>
                         {item.icon}
@@ -138,6 +145,19 @@ export function Header() {
                     </button>
                   );
                 })}
+
+                <button
+                  onClick={() => {
+                    navigate('/ai-usage');
+                    setIsMobileMenuOpen(false);
+                  }}
+                  className="w-full text-left flex items-center gap-4 px-5 py-4 mt-2 rounded-xl transition-all duration-300 text-sm font-bold text-[#D4AF37] bg-[#D4AF37]/10 border border-[#D4AF37]/30 hover:bg-[#D4AF37]/20"
+                >
+                  <div className="p-2 rounded-lg bg-[#D4AF37]/20">
+                    <Bot className="w-4 h-4" />
+                  </div>
+                  AI Usage
+                </button>
               </div>
             </motion.div>
           )}
@@ -148,12 +168,12 @@ export function Header() {
       <header className="w-full bg-[#003366] text-white pt-40 pb-20 px-6 relative overflow-hidden font-['Montserrat',sans-serif] border-b-8 border-[#D4AF37]">
         {/* Dynamic Background Gradient */}
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#004b99] via-[#003366] to-[#001f3f]"></div>
-        
+
         {/* Decorative Grid Pattern */}
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCI+CiAgPHBhdGggZD0iTTAgMGg0MHY0MEgwem0yMCAyMGgtdi0tIiBmaWxsPSIjZmZmIiBmaWxsLW9wYWNpdHk9IjAuMDIiIGZpbGwtcnVsZT0iZXZlbm9kZCIvPgo8L3N2Zz4=')]"></div>
 
         <div className="max-w-5xl mx-auto flex flex-col items-center text-center relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -162,7 +182,7 @@ export function Header() {
             <BookOpen className="w-12 h-12 text-[#D4AF37]" />
           </motion.div>
 
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
@@ -171,26 +191,26 @@ export function Header() {
             Tài liệu học tập - Chủ nghĩa Xã hội Khoa học
           </motion.h2>
 
-          <motion.h1 
+          <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
             className="text-4xl md:text-6xl font-black leading-tight mb-6 uppercase tracking-wider text-transparent bg-clip-text bg-gradient-to-b from-white to-white/70 drop-shadow-sm"
           >
-            Chương 6: Vấn Đề Dân Tộc<br/>
+            Chương 6: Vấn Đề Dân Tộc<br />
             <span className="text-2xl md:text-3xl font-bold text-[#D4AF37] mt-4 block normal-case tracking-normal">
               Trong thời kỳ quá độ lên Chủ nghĩa Xã hội
             </span>
           </motion.h1>
 
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
             className="h-1 w-32 bg-gradient-to-r from-transparent via-[#D4AF37] to-transparent mx-auto rounded-full mb-8"
           ></motion.div>
 
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.8 }}
