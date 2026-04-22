@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phân tích Tình huống Chương 6</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-blue: #1a3a5f;
+            --accent-gold: #c5a059;
+            --light-bg: #f8f9fa;
+            --white: #ffffff;
+            --text-dark: #333;
+            --shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background-color: #ececec;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .case-study-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: var(--white);
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+        }
+
+        h2.section-title {
+            text-align: center;
+            color: var(--primary-blue);
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--accent-gold);
+            padding-bottom: 10px;
+            margin-bottom: 30px;
+        }
+
+        /* Phần Tranh luận A & B */
+        .debate-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .opinion-card {
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .card-a { background-color: #e8f5e9; border-left: 5px solid #4caf50; }
+        .card-b { background-color: #fff3e0; border-left: 5px solid #ff9800; }
+
+        .opinion-card strong { color: var(--primary-blue); display: block; margin-bottom: 10px; }
+
+        /* Phần Phân xử */
+        .verdict-box {
+            background: var(--primary-blue);
+            color: var(--white);
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .verdict-box h3 { color: var(--accent-gold); margin-top: 0; }
+
+        /* Phần Căn cứ lý luận */
+        .theory-section {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            margin-bottom: 30px;
+        }
+
+        .theory-section h4 { color: var(--primary-blue); margin-top: 0; border-left: 4px solid var(--accent-gold); padding-left: 10px; }
+
+        /* Nhận định nhóm */
+        .group-insight {
+            background: linear-gradient(135deg, #1a3a5f 0%, #2c5282 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .group-insight h3 { color: var(--accent-gold); margin-top: 0; }
+        
+        .challenge-list { list-style: none; padding: 0; }
+        .challenge-list li { margin-bottom: 15px; padding-left: 30px; position: relative; }
+        .challenge-list li::before { content: "⚠"; position: absolute; left: 0; color: var(--accent-gold); font-weight: bold; }
+
+        @media (max-width: 768px) {
+            .debate-grid { grid-template-columns: 1fr; }
+            .case-study-container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="case-study-container">
+    <h2 class="section-title">Phân tích Tình huống & Lập luận</h2>
+
+    <div class="debate-grid">
+        <div class="opinion-card card-a">
+            <strong>Ý kiến của A:</strong>
+            "Việt Nam có 54 dân tộc cùng chung sống hòa thuận, không xung đột — đó là bằng chứng rõ nhất cho thấy chính sách dân tộc của Đảng đã thành công hoàn toàn."
+        </div>
+        <div class="opinion-card card-b">
+            <strong>Ý kiến của B:</strong>
+            "Không xung đột chưa có nghĩa là bình đẳng — chênh lệch kinh tế, văn hóa, giáo dục giữa các dân tộc vẫn còn rất lớn, không thể gọi là thành công hoàn toàn."
+        </div>
+    </div>
+
+    <div class="verdict-box">
+        <h3>KẾT LUẬN: CẢ HAI ĐỀU ĐÚNG MỘT PHẦN</h3>
+        <p>A đúng về sự ổn định chính trị nhưng quá lạc quan. B đúng về khoảng cách phát triển nhưng thiếu cái nhìn lịch sử về những nỗ lực thực tế.</p>
+    </div>
+
+    <div class="theory-section">
+        <h4>Căn cứ lý luận (Cương lĩnh dân tộc của Lênin)</h4>
+        <p><strong>1. Bình đẳng về pháp lý & chính trị:</strong> Là quyền ngang nhau trong quản lý nhà nước. Việt Nam đã thực hiện tốt qua tỷ lệ đại biểu người dân tộc thiểu số trong Quốc hội.</p>
+        <p><strong>2. Bình đẳng về thực tế:</strong> Theo Lênin, đây mới là nội dung quan trọng nhất. Không thể có bình đẳng thực sự nếu còn chênh lệch quá lớn về trình độ phát triển. "Không xung đột" chỉ là điều kiện cần, chưa phải là điều kiện đủ của sự bình đẳng hoàn hảo.</p>
+    </div>
+
+    <div class="group-insight">
+        <h3>Thách thức chiến lược: Rút ngắn khoảng cách phát triển</h3>
+        <ul class="challenge-list">
+            <li><strong>Rào cản địa lý:</strong> 3/4 diện tích là vùng sâu, vùng xa, biên giới, khiến đầu tư hạ tầng tốn kém và khó khăn.</li>
+            <li><strong>An ninh quốc phòng:</strong> Sự chênh lệch giàu nghèo dễ bị thế lực thù địch lợi dụng để kích động "diễn biến hòa bình".</li>
+            <li><strong>Bảo tồn bản sắc:</strong> Phải hiện đại hóa nhưng không được để "hòa tan" ngôn ngữ và văn hóa đặc trưng.</li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>
