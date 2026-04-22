@@ -8,7 +8,7 @@ export function FooterSummary() {
       step: "01",
       title: "Khái Niệm & Đặc Trưng",
       icon: <BookOpen className="w-8 h-8" />,
-      desc: "Làm rõ bản chất Dân tộc theo nghĩa rộng (Quốc gia) và nghĩa hẹp (Tộc người). Khẳng định vai trò của lãnh thổ, kinh tế, ngôn ngữ, và bản sắc văn hóa."
+      desc: "Làm rõ bản chất Dân tộc theo nghĩa rộng (Quốc gia) và nghĩa hẹp (Tộc ngườii). Khẳng định vai trò của lãnh thổ, kinh tế, ngôn ngữ, và bản sắc văn hóa."
     },
     {
       step: "02",
