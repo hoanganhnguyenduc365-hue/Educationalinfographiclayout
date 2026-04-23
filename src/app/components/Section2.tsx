@@ -37,7 +37,7 @@ export function Section2() {
     },
     {
       id: 3,
-      title: "Liên Hiệp Giai Cấp Công Nhân",
+      title: "Liên Hiệp Công Nhân Tất Cả Các Dân Tộc",
       icon: <Users className="w-8 h-8 text-[#d4183d]" />,
       desc: "Đoàn kết công nhân tất cả các dân tộc lại. Đây là tư tưởng cơ bản, tạo sức mạnh đấu tranh giải phóng dân tộc.",
       detail: "Đây là cơ sở vững chắc nhất để giải quyết triệt để vấn đề dân tộc. Mục tiêu là tập hợp sức mạnh của giai cấp công nhân toàn thế giới để chống lại ách áp bức tư bản chủ nghĩa, bởi lẽ giai cấp công nhân chỉ có thể giải phóng chính mình khi đồng thời giải phóng được tất cả các dân tộc bị áp bức."
@@ -51,9 +51,9 @@ export function Section2() {
       <GitBranch className="absolute -left-20 top-40 w-[500px] h-[500px] text-[#003366] opacity-5 pointer-events-none" />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        
+
         {/* Header */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -81,7 +81,7 @@ export function Section2() {
               <MousePointerClick className="w-4 h-4" /> Di chuột hoặc chạm vào thẻ để xem phân tích
             </span>
           </div>
-          
+
           <div className="flex flex-col md:flex-row gap-8 relative">
             {/* VS Badge */}
             <div className="hidden md:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-16 h-16 bg-[#D4AF37] text-white font-black text-xl items-center justify-center rounded-full shadow-2xl border-4 border-white z-20">
@@ -89,7 +89,7 @@ export function Section2() {
             </div>
 
             {xuHuong.map((item, idx) => (
-              <motion.div 
+              <motion.div
                 key={idx}
                 initial={{ opacity: 0, x: idx === 0 ? -50 : 50 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -97,52 +97,44 @@ export function Section2() {
                 className="flex-1 group cursor-pointer min-h-[350px] md:min-h-[400px] [perspective:1000px]"
               >
                 <div className="relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d] group-hover:[transform:rotateY(180deg)]">
-                  
+
                   {/* Front Side */}
-                  <div className={`absolute w-full h-full [backface-visibility:hidden] rounded-3xl p-10 flex flex-col items-center justify-center text-center shadow-xl border-t-8 ${
-                    idx === 0 
-                      ? "bg-gradient-to-b from-[#003366] to-[#001f3f] text-white border-[#D4AF37]" 
-                      : "bg-gradient-to-b from-white to-gray-50 border-[#003366]"
-                  }`}>
-                    <div className={`p-5 rounded-2xl mb-8 shadow-inner ${
-                      idx === 0 ? "bg-white/10 backdrop-blur-md border border-white/20" : "bg-[#003366] border border-[#003366]/20"
+                  <div className={`absolute w-full h-full [backface-visibility:hidden] rounded-3xl p-10 flex flex-col items-center justify-center text-center shadow-xl border-t-8 ${idx === 0
+                    ? "bg-gradient-to-b from-[#003366] to-[#001f3f] text-white border-[#D4AF37]"
+                    : "bg-gradient-to-b from-white to-gray-50 border-[#003366]"
                     }`}>
+                    <div className={`p-5 rounded-2xl mb-8 shadow-inner ${idx === 0 ? "bg-white/10 backdrop-blur-md border border-white/20" : "bg-[#003366] border border-[#003366]/20"
+                      }`}>
                       {React.cloneElement(item.icon, { className: `w-12 h-12 ${idx === 0 ? 'text-[#D4AF37]' : 'text-white'}` })}
                     </div>
-                    <h4 className={`text-2xl md:text-3xl font-black mb-6 uppercase tracking-wider ${
-                      idx === 0 ? "text-white" : "text-[#003366]"
-                    }`}>
+                    <h4 className={`text-2xl md:text-3xl font-black mb-6 uppercase tracking-wider ${idx === 0 ? "text-white" : "text-[#003366]"
+                      }`}>
                       {item.type}
                     </h4>
-                    <p className={`font-medium text-lg leading-relaxed ${
-                      idx === 0 ? "text-white/80" : "text-gray-600"
-                    }`}>
+                    <p className={`font-medium text-lg leading-relaxed ${idx === 0 ? "text-white/80" : "text-gray-600"
+                      }`}>
                       {item.desc}
                     </p>
-                    <div className={`mt-auto pt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest animate-pulse ${
-                      idx === 0 ? "text-[#D4AF37]" : "text-[#003366]"
-                    }`}>
+                    <div className={`mt-auto pt-8 flex items-center gap-2 text-sm font-bold uppercase tracking-widest animate-pulse ${idx === 0 ? "text-[#D4AF37]" : "text-[#003366]"
+                      }`}>
                       <Info className="w-5 h-5" /> Xem chi tiết
                     </div>
                   </div>
 
                   {/* Back Side */}
-                  <div className={`absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-10 shadow-2xl flex flex-col items-center justify-center text-center border-b-8 ${
-                    idx === 0 
-                      ? "bg-white border-[#003366]" 
-                      : "bg-[#003366] text-white border-[#D4AF37]"
-                  }`}>
+                  <div className={`absolute w-full h-full [backface-visibility:hidden] [transform:rotateY(180deg)] rounded-3xl p-10 shadow-2xl flex flex-col items-center justify-center text-center border-b-8 ${idx === 0
+                    ? "bg-white border-[#003366]"
+                    : "bg-[#003366] text-white border-[#D4AF37]"
+                    }`}>
                     <div className="absolute top-0 right-0 w-32 h-32 opacity-5 pointer-events-none">
                       {React.cloneElement(item.icon, { className: `w-full h-full ${idx === 0 ? 'text-[#003366]' : 'text-white'}` })}
                     </div>
-                    <h4 className={`text-2xl font-black mb-6 uppercase border-b-2 pb-4 inline-block ${
-                      idx === 0 ? "text-[#003366] border-[#D4AF37]" : "text-[#D4AF37] border-white/20"
-                    }`}>
+                    <h4 className={`text-2xl font-black mb-6 uppercase border-b-2 pb-4 inline-block ${idx === 0 ? "text-[#003366] border-[#D4AF37]" : "text-[#D4AF37] border-white/20"
+                      }`}>
                       Phân Tích Bối Cảnh
                     </h4>
-                    <p className={`text-lg leading-relaxed font-medium text-justify ${
-                      idx === 0 ? "text-gray-700" : "text-white/90"
-                    }`}>
+                    <p className={`text-lg leading-relaxed font-medium text-justify ${idx === 0 ? "text-gray-700" : "text-white/90"
+                      }`}>
                       {item.detail}
                     </p>
                   </div>
@@ -155,8 +147,8 @@ export function Section2() {
 
         {/* 3 Cương Lĩnh Dân Tộc - Interactive Pillars */}
         <div className="relative mt-20 bg-[#f8fbff] rounded-[3rem] p-8 md:p-14 shadow-inner border border-blue-50/50">
-          
-          <motion.div 
+
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -178,26 +170,23 @@ export function Section2() {
               const isActive = activeCuongLinh === item.id;
 
               return (
-                <div 
-                  key={item.id} 
-                  className={`bg-white rounded-2xl shadow-md border transition-all duration-500 overflow-hidden ${
-                    isActive ? "border-[#003366] ring-4 ring-[#003366]/5" : "border-gray-200 hover:border-[#D4AF37]/50"
-                  }`}
+                <div
+                  key={item.id}
+                  className={`bg-white rounded-2xl shadow-md border transition-all duration-500 overflow-hidden ${isActive ? "border-[#003366] ring-4 ring-[#003366]/5" : "border-gray-200 hover:border-[#D4AF37]/50"
+                    }`}
                 >
                   {/* Header (Always visible) */}
-                  <button 
+                  <button
                     onClick={() => setActiveCuongLinh(isActive ? null : item.id)}
                     className="w-full flex items-center gap-6 p-6 focus:outline-none"
                   >
-                    <div className={`p-4 rounded-xl flex items-center justify-center transition-colors ${
-                      isActive ? "bg-[#003366] text-white shadow-lg" : "bg-gray-50 text-gray-400 group-hover:bg-[#003366]/10"
-                    }`}>
+                    <div className={`p-4 rounded-xl flex items-center justify-center transition-colors ${isActive ? "bg-[#003366] text-white shadow-lg" : "bg-gray-50 text-gray-400 group-hover:bg-[#003366]/10"
+                      }`}>
                       {React.cloneElement(item.icon, { className: `w-8 h-8 ${isActive ? "text-[#D4AF37]" : ""}` })}
                     </div>
                     <div className="flex-1 text-left">
-                      <h4 className={`text-xl md:text-2xl font-bold uppercase tracking-wide mb-2 transition-colors ${
-                        isActive ? "text-[#003366]" : "text-gray-700"
-                      }`}>
+                      <h4 className={`text-xl md:text-2xl font-bold uppercase tracking-wide mb-2 transition-colors ${isActive ? "text-[#003366]" : "text-gray-700"
+                        }`}>
                         {item.title}
                       </h4>
                       <p className="text-gray-500 font-medium text-sm md:text-base pr-4 line-clamp-2 md:line-clamp-none">
